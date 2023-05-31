@@ -1,66 +1,20 @@
-<section class="categories" id="">
+<section class="categories">  
+  <div *ngIf="isLoading" class="overlay">
+    <mat-spinner class="spinner" color="primary"></mat-spinner>
+</div>
     <div class="container">
-        <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
-      
-          <ng-container matColumnDef="title">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> title </th>
-            <td mat-cell *matCellDef="let element"> {{element.title}} </td>
-          </ng-container>
-    
-          <ng-container matColumnDef="category">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> category </th>
-            <td mat-cell *matCellDef="let element"> {{element.category}} </td>
-          </ng-container>
-    
-          <ng-container matColumnDef="price">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> price </th>
-            <td mat-cell *matCellDef="let element"> {{element.price}}  </td>
-          </ng-container>
-    
-          <ng-container matColumnDef="rating">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> rating </th>
-            <td mat-cell *matCellDef="let element"> {{element?.rating?.rate}} </td>
-          </ng-container>
-    
-          <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> description </th>
-            <td mat-cell *matCellDef="let element">  {{element.description}} </td>
-          </ng-container>
-         
-          <ng-container matColumnDef="action">
-            <th mat-header-cell *matHeaderCellDef> Menu </th>
-            <mat-cell *matCellDef="let element">
-              <button mat-icon-button [matMenuTriggerFor]="menu">
-                <mat-icon>more_vert</mat-icon>
-              </button>
-              <mat-menu #menu="matMenu">
-                <button mat-menu-item >
-                  View
-                </button>
-                <!-- <button mat-menu-item (click)="navigateToFormEdit(row)">
-                  Edit
-                </button>
-                <button mat-menu-item (click)="updateFormStatus(row)">
-                  Update status
-                </button>
-                <button mat-menu-item (click)="exportAsJson(row.id)">
-                  Export as json
-                </button> -->
-                <button mat-menu-item>
-                  Delete
-                </button>
-              </mat-menu>
-            </mat-cell>
-          </ng-container>
-          
-        
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-        showFirstLastButtons
-        aria-label="Select page of periodic elements">
-</mat-paginator>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-4 mt-5 mb-1" *ngFor="let category of categories; let i = index">
+          <mat-card class="example-card" >
+            <!-- <span> -->
+              <img mat-card-image src="{{categoriesImages[i]}}" alt="...">
+            <!-- </span> -->
+            <mat-card-content>
+              <h3 style="text-align:center">{{category}}</h3>
+            </mat-card-content>
+          </mat-card>
+        </div>
       </div>
-
-</section>
+    </div> 
+  </section>
+  

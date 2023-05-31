@@ -20,4 +20,17 @@ export class ProductsService {
       })
   })
   }
+
+  async deleteProduct(id: string) {
+    return new Promise((resolve, reject) => {
+      this.http.delete(`https://fakestoreapi.com/products/${id}`).pipe().subscribe({
+        next: (data => {
+          resolve(data)
+        }),
+        error: (err => {
+          reject(false)
+        })
+      })
+  })
+  }
 }

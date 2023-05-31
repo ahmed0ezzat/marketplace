@@ -1,0 +1,16 @@
+.admin {
+    padding-bottom: 80px;
+
+    mat-card {
+        img {
+            transition: 0.3s all ease-in-out;
+        }
+        overflow: hidden;
+        cursor: pointer;
+        &:hover {
+            & img {
+                transform: scale(0.9);
+            }
+        }
+    }
+}

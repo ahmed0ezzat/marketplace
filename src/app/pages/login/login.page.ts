@@ -43,7 +43,7 @@ export class LoginPage {
           this.router.navigate(['/'])
         }, 200);
       } catch (error) {
-        await this.helper.openSnackBar('Login Error, please try again or contact the administrator')
+        await this.helper.openSnackBar('Wrong username or password, please try again or contact the administrator')
       }
     }
   }
