@@ -17,8 +17,9 @@ export class HeaderComponent {
     },
   ];
   constructor(private appServices: AppService) {
-    const storedLang: string = String(localStorage.getItem('lang'));
+    let storedLang: string = String(localStorage.getItem('lang'));
     if (storedLang) {
+      storedLang = storedLang == 'null' ? 'en' : storedLang
       this.selectedLang = storedLang;
       this.switchLang(storedLang);
     }
