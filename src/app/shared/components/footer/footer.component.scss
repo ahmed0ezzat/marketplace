@@ -1,4 +1,14 @@
 .footer {
     background: #3f50b5;
     color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 9;
+    height: 50px;
+    border-top: 2px solid white;
+
+    .content {
+        height: 50px;
+    }
 }
