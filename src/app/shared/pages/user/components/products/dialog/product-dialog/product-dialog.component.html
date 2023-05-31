@@ -1,0 +1,30 @@
+<div mat-dialog-content class="dialog">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <img style="max-width: 100%" src="{{ data.image }}" />
+    </div>
+    <div class="col-12 col-lg-6">
+      <h2>
+        <strong class="title">{{ data.title }}</strong>
+      </h2>
+      <h4>
+        <strong>Price:</strong>
+       {{ data.price }} EGP
+      </h4>
+      <h4>
+        <strong>Rating:</strong><br />
+        Rated with {{ data.rating.rate }} of 5 <br>
+        {{data.rating.count }} user rated
+      </h4>
+      <h4>
+        <strong>category:</strong><br />
+        {{ data.category }}
+      </h4>
+      <h5>
+        <strong>description:</strong><br />
+        {{ data.description }}
+      </h5>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,41 @@
+<section class="login">
+    <div *ngIf="isLoading" class="overlay">
+        <mat-spinner class="spinner" color="primary"></mat-spinner>
+    </div>
+
+  <mat-card>
+    <mat-card-header class="head">
+      <mat-card-title >Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="form">
+        <mat-form-field class="filed">
+          <input
+            type="text"
+            matInput
+            placeholder="Username"
+            formControlName="username"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="filed">
+          <input
+            type="password"
+            matInput
+            placeholder="Password"
+            formControlName="password"
+          />
+        </mat-form-field>
+
+        <mat-error *ngIf="isSubmit && form.invalid">
+            Please fill all required fields.
+          </mat-error>
+
+        <div class="button">
+          <button (click)="submit()" mat-raised-button color="primary" type="submit" mat-button>Login</button>
+          <button (click)="navigateToSignup()" style="float:right" type="" mat-button> Signup</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>

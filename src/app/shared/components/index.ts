@@ -1,0 +1,5 @@
+export * from './header/header.component'
+export * from './footer/footer.component'
+export * from '../pages/admin/components/categories/categories.component'
+export * from '../pages/user/components/products/products.component'
+export * from './not-authorized/not-authorized.component'

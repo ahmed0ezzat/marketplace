@@ -1,0 +1,79 @@
+<section class="signup">
+    <div *ngIf="isLoading" class="overlay">
+        <mat-spinner class="spinner" color="primary"></mat-spinner>
+    </div>
+
+  <mat-card>
+    <mat-card-header class="head">
+      <mat-card-title >Signup</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="form">
+        <mat-form-field class="filed">
+          <input
+            type="text"
+            matInput
+            placeholder="firstname"
+            formControlName="firstname"
+          />
+        </mat-form-field>
+      
+        <mat-form-field class="filed">
+          <input
+            type="text"
+            matInput
+            placeholder="lastname"
+            formControlName="lastname"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="filed">
+          <input
+            type="text"
+            matInput
+            placeholder="username"
+            formControlName="username"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="filed">
+          <input
+            type="email"
+            matInput
+            placeholder="email"
+            formControlName="email"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="filed">
+          <input
+            type="password"
+            matInput
+            placeholder="Password"
+            formControlName="password"
+          />
+        </mat-form-field>
+        <mat-form-field class="filed">
+          <input
+            type="password"
+            matInput
+            placeholder="confirm Password"
+            formControlName="confirmPassword"
+          />
+        </mat-form-field>
+        <mat-error *ngIf="isSubmit  && form.get('confirmPassword')?.getError('passwordNotMatching') ">
+          Passwords do not match, please try again!
+        </mat-error>
+
+        <mat-error *ngIf="isSubmit && form.invalid">
+            Please fill all required fields in the right formate.
+          </mat-error>
+
+        <div class="button">
+          <button (click)="submit()" mat-raised-button color="primary" type="submit" mat-button>Submit</button>
+          <!-- <button (click)="navigateToSignup()" style="float:right" type="" mat-button> Signup</button> -->
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>
