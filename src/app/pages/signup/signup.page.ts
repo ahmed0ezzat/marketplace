@@ -33,6 +33,7 @@ export class SignupPage {
       return;
     }
     if (this.form.valid) {
+      this.isLoading = true
       console.log('add new user ..');
       let userForm = this.form.value
       const user = {
@@ -47,10 +48,12 @@ export class SignupPage {
       try {
         await this.authService.signup(user)
         await this.helper.openSnackBar('Success signup!, you will be redirected to login')
+        this.isLoading = false
         setTimeout(() => {
           this.router.navigate(['/login'])
         }, 1000);
       } catch (error) {
+        this.isLoading = false
         await this.helper.openSnackBar('Signup Error, please try again or contact the administrator')
       }
     }

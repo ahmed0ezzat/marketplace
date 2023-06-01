@@ -1,14 +1,41 @@
 .signup {
+    
     max-width: 400px;
     margin: 100px auto;
+    padding-bottom: 80px;
     justify-content: center;
+    .bg {
+        position: absolute;
+        width: 50%;
+        height: 100%;
+        top: 64px;
+        z-index: 0;
+        right: 0;
+        background-image: url('../../../assets/img/roberto-cortese-ejhjSZKTeeg-unsplash (2).jpg');
+        background-size: cover;
 
+        .bg-overlay {
+            position: absolute;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(2px);
+        right: 0;
+        background: rgba(0, 0, 0, 0.3);
+
+        }
+    }
     .head {
         margin: 10px auto;
     }
 
     .filed {
-        display: block;
+        display: inline-block;
+        width: 50%;
+        padding:0px 10px;
         margin: 20px auto;
+    }
+    .filed-block {
+        display: block;
+        
     }
 }

@@ -1,4 +1,7 @@
 <section class="signup">
+  <div class="bg">
+    <div class="bg-overlay"></div>
+  </div>
     <div *ngIf="isLoading" class="overlay">
         <mat-spinner class="spinner" color="primary"></mat-spinner>
     </div>
@@ -45,7 +48,7 @@
           />
         </mat-form-field>
 
-        <mat-form-field class="filed">
+        <mat-form-field class="filed-block">
           <input
             type="password"
             matInput
@@ -53,7 +56,7 @@
             formControlName="password"
           />
         </mat-form-field>
-        <mat-form-field class="filed">
+        <mat-form-field class="filed-block">
           <input
             type="password"
             matInput
