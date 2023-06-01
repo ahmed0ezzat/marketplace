@@ -1,18 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AppService } from '../index'
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor( private http: HttpClient ) { }
+  constructor( private http: HttpClient, private appService: AppService ) { }
 
   async isAuthenticated() {
     try {
-      return sessionStorage.getItem('token') ? true : false
+      const isAuthenticated = sessionStorage.getItem('token')
+      if (isAuthenticated) {
+        this.appService.loggedIn$.next(true)
+        return true
+      }
+      this.appService.loggedIn$.next(false)
+      return false
     } catch (error) {
       return false
     }
+  }
+   logout() {
+    sessionStorage.clear()
+    return true
   }
 
   isAuthorized(url: any) {

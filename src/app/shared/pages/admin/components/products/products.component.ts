@@ -1,6 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { MatTableDataSource } from "@angular/material/table";
-import { DeleteProductConfirmationDialogComponent } from '../index'
+import { DeleteProductConfirmationDialogComponent, AddNewProductDialogComponent } from '../index'
 import {
   CategoriesService,
   ProductsService,
@@ -51,7 +51,31 @@ export class ProductsComponent {
       this.helper.openSnackBar(
         "Error loading products, please try again or contact the administrator"
       );
-      //TODO: throw error
+    }
+  }
+  openAddNewProductDialog() {
+    const dialogRef = this.dialog.open(AddNewProductDialogComponent , {
+      disableClose: true,
+      autoFocus: true
+      // data: product
+    })
+    dialogRef.afterClosed().subscribe(async (result) => {
+      if (result) {
+        await this.addProduct(result)
+      }
+    })
+  }
+
+  async addProduct(data: any) {
+    try {
+      this.isLoading = true
+      await this.productsService.addProducts(data)
+      this.helper.openSnackBar('Product added successfully!')
+      this.isLoading = false
+    } catch (error) {
+      this.helper.openSnackBar('Error adding products')
+      this.isLoading = false
+      
     }
   }
 
@@ -60,7 +84,6 @@ export class ProductsComponent {
       data: product
     })
     dialogRef.afterClosed().subscribe(async (result) => {
-      console.log(result);
       if (result) {
         await this.deleteProduct(product.id)
       }

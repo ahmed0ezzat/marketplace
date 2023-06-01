@@ -1,0 +1,52 @@
+<div class="container" [formGroup]="productsForm">
+  <form class="addProduct">
+    <div class="row justify-content-center">
+      <h3>Add New Product</h3>
+
+      <div class="field">
+        <mat-form-field class="example-full-width d-block">
+          <mat-label>Title</mat-label>
+          <input formControlName="title" type="text" matInput>
+        </mat-form-field>
+      </div>
+
+      <div class="field">
+        <mat-form-field class="example-full-width">
+          <mat-label>Price</mat-label>
+          <input formControlName="price" matInput type="number">
+        </mat-form-field>
+      </div>
+
+      <div class="field">
+        <mat-form-field class="example-full-width">
+          <mat-label>Leave a description</mat-label>
+          <textarea formControlName="description" matInput placeholder="Ex. It makes me feel..."></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="field">
+        <mat-form-field class="example-full-width">
+          <mat-label>Select category</mat-label>
+          <input
+            type="text"
+            placeholder="Pick one"
+            aria-label="Select category"
+            matInput
+            formControlName="category"
+            [matAutocomplete]="auto"
+          />
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of categories" [value]="option">
+              {{ option }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+
+      <div class="button">
+        <button [disabled]="productsForm.invalid" mat-button mat-dialog-close cdkFocusInitial [mat-dialog-close]="productsForm.value">Submit</button>
+      </div>
+
+    </div>
+  </form>
+</div>

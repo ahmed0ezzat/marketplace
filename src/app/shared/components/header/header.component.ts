@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AppService } from '../../index';
+import { AppService, AuthService } from '../../index';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,7 @@ import { AppService } from '../../index';
 })
 export class HeaderComponent {
   selectedLang: string = 'en';
+  isLoggedin: boolean = false
   langList = [
     {
       title: 'en',
@@ -16,13 +18,21 @@ export class HeaderComponent {
       title: 'ar',
     },
   ];
-  constructor(private appServices: AppService) {
+  constructor(
+    private appServices: AppService, 
+    public authService: AuthService,
+    private router: Router) {
     let storedLang: string = String(localStorage.getItem('lang'));
     if (storedLang) {
       storedLang = storedLang == 'null' ? 'en' : storedLang
       this.selectedLang = storedLang;
       this.switchLang(storedLang);
     }
+    this.appServices.loggedIn$.subscribe(loggedIn => {
+      this.isLoggedin = loggedIn;
+    })
+  }
+  async ngOnInit() {
   }
   toggleLang(lang: any) {
     this.selectedLang = lang.title;
@@ -35,5 +45,11 @@ export class HeaderComponent {
 
   storeSelectedLang(lang: string) {
     localStorage.setItem('lang', lang);
+  }
+
+  logout() {
+    this.authService.logout();
+    this.appServices.loggedIn$.next(false)
+    this.router.navigate(['/login'])
   }
 }

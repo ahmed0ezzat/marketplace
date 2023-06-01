@@ -6,12 +6,16 @@
         <div class="row justify-content-center">
           <mat-toolbar class="mt-3 mb-3 col-12">
             <p>
-              <strong>{{ "header.Title" | translate }}</strong>
+              <a mat-button [routerLink]="'/'">
+                <strong>{{ "header.Title" | translate }}</strong>
+              </a>
               <mat-icon class="arrow">
                 arrow_forward_ios
               </mat-icon>
               <strong>
+               <a mat-button [routerLink]="'/admin'">
                 Admin
+               </a>
               </strong>
               <mat-icon class="arrow">
                 arrow_forward_ios
@@ -32,6 +36,11 @@
               Admin Area
             </button> -->
           </mat-toolbar>
+        </div>
+        <div class="demo-button-container mb-2">
+          <button mat-raised-button  class="demo-button" (click)="openAddNewProductDialog()">
+            Add new product
+          </button>
         </div>
         <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
       

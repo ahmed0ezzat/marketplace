@@ -7,5 +7,6 @@ import { BehaviorSubject } from 'rxjs';
 export class AppService {
   lang$ = new BehaviorSubject<string>('')
   permissions$ = new BehaviorSubject<string[]>([])
+  loggedIn$ = new BehaviorSubject<boolean>(false)
   constructor() { }
 }

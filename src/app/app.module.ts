@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPage, SignupPage } from './pages';
@@ -15,6 +14,7 @@ import { NgxStarsModule } from 'ngx-stars';
 import { NotAuthorizedComponent } from './shared/components/not-authorized/not-authorized.component';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from './shared/index'
 
 
 @NgModule({
@@ -24,8 +24,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
     HttpClientModule,
+    SharedModule,
     NgxStarsModule,
     TranslateModule.forRoot({
       loader: {

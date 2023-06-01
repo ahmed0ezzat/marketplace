@@ -25,6 +25,7 @@ export class LoginPage {
 
   async submit() {
     this.isSubmit = true
+    this.isLoading = true
     console.log('submitt')
     if (this.form.valid) {
       console.log('add new user ..');
@@ -46,6 +47,7 @@ export class LoginPage {
         await this.helper.openSnackBar('Wrong username or password, please try again or contact the administrator')
       }
     }
+    this.isLoading = false
   }
 
   storeUserToken(token: string ) {

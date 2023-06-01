@@ -1,28 +1,31 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <!-- <button mat-icon-button>
-      <mat-icon >menu</mat-icon>
-    </button> -->
-    <img src="https://img.logoipsum.com/247.svg" />
-   
-    <a style="text-decoration: none;" mat-button [routerLink]="'/'">  <h1>Marketplace</h1> </a>
-    <span class="menu-spacer"></span>
-    <div>
-      <!-- <a mat-button [routerLink]="'/'" ng-can [permission]="'edit'" > Admin </a> -->
-      <!-- <a mat-button [routerLink]="'/products'"> Products </a> -->
-      <!-- <span class="flexExpand"></span> -->
-      <!-- <mat-form-field style="margin-top:20px">
-        <span matPrefix> </span>
-        <input type="text" matInput placeholder="Search" name= "search">
-        <button matSuffix mat-button><mat-icon >search</mat-icon></button>
-        </mat-form-field> -->
+<section class="header" mat-dialog-content>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <img src="https://img.logoipsum.com/247.svg" />
+      <a style="text-decoration: none" mat-button [routerLink]="'/'">
+        <h1>Marketplace</h1>
+      </a>
+      <span class="menu-spacer"></span>
+      <div>
         <button mat-button [matMenuTriggerFor]="menu" class="langs">
-          {{selectedLang}}
+          {{ selectedLang }}
         </button>
+
         <mat-menu #menu="matMenu">
-          <button mat-menu-item style="text-align: center!important;" *ngFor="let lang of langList" (click)="toggleLang(lang)">{{lang.title}}
+          <button
+            mat-menu-item
+            style="text-align: center !important"
+            *ngFor="let lang of langList"
+            (click)="toggleLang(lang)"
+          >
+            {{ lang.title }}
           </button>
         </mat-menu>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+      </div>
+      <button (click)="logout()" mat-button class="logout" *ngIf="isLoggedin">
+        <mat-icon> logout </mat-icon>
+        Logout
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</section>
