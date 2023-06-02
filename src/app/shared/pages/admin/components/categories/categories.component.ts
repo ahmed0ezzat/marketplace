@@ -1,8 +1,5 @@
-import { Component, ViewChild } from "@angular/core";
-import { MatTableDataSource } from "@angular/material/table";
+import { Component } from "@angular/core";
 import { CategoriesService, ProductsService, HelperService } from "../../../../index";
-import { MatPaginator } from "@angular/material/paginator";
-import { MatSort } from "@angular/material/sort";
 @Component({
   selector: "app-categories",
   templateUrl: "./categories.component.html",
@@ -11,6 +8,7 @@ import { MatSort } from "@angular/material/sort";
 export class CategoriesComponent {
   isLoading : boolean = false;
   categories: any = []
+  // inject static category img for good ui view
   categoriesImages = [
     '../../../../../../assets/img/christopher-gower-_aXa21cf7rY-unsplash.jpg',
     '../../../../../../assets/img/samar-ahmad-g2aX18GgTT4-unsplash.jpg',

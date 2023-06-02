@@ -2,12 +2,12 @@
   <div class="bg">
     <div class="bg-overlay"></div>
   </div>
-    <div *ngIf="isLoading" class="overlay">
-        <mat-spinner class="spinner" color="primary"></mat-spinner>
-    </div>
+  <div *ngIf="isLoading" class="overlay">
+    <mat-spinner class="spinner" color="primary"></mat-spinner>
+  </div>
   <mat-card>
     <mat-card-header class="head">
-      <mat-card-title >Login</mat-card-title>
+      <mat-card-title>Login</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <form [formGroup]="form">
@@ -30,12 +30,27 @@
         </mat-form-field>
 
         <mat-error *ngIf="isSubmit && form.invalid">
-            Please fill all required fields.
-          </mat-error>
+          Please fill all required fields.
+        </mat-error>
 
         <div class="button">
-          <button (click)="submit()" mat-raised-button color="primary" type="submit" mat-button>Login</button>
-          <button (click)="navigateToSignup()" style="float:right" type="" mat-button> Sign up</button>
+          <button
+            (click)="submit()"
+            mat-raised-button
+            color="primary"
+            type="submit"
+            mat-button
+          >
+            Login
+          </button>
+          <button
+            (click)="navigateToSignup()"
+            style="float: right"
+            type=""
+            mat-button
+          >
+            Sign up
+          </button>
         </div>
       </form>
     </mat-card-content>

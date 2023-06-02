@@ -41,6 +41,20 @@ export class AuthService {
       return []
   }
 
+  storeUserToken(token: string) {
+    sessionStorage.setItem("token", token);
+  }
+  storeAdminRoles() {
+    const permissions = ["view", "edit", "update", "delete"];
+    this.appService.permissions$.next(permissions);
+    sessionStorage.setItem("roles", JSON.stringify(permissions));
+  }
+  storeUserRoles() {
+    const permissions = ["view"];
+    this.appService.permissions$.next(permissions);
+    sessionStorage.setItem("roles", JSON.stringify(permissions));
+  }
+
   async login(body: any) {
     return new Promise((resolve, reject) => {
       this.http.post('https://fakestoreapi.com/auth/login', body).pipe().subscribe({

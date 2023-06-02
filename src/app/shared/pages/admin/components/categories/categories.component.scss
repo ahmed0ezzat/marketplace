@@ -1,17 +1,16 @@
 .categories {
-    padding-bottom: 80px;
-    padding-top: 20px;
+  padding-bottom: 80px;
+  padding-top: 20px;
 
-
-        mat-card {
-            img {
-                transition: 0.3s all ease-in-out;
-            }
-            overflow: hidden;
-            &:hover {
-                & img {
-                    transform: rotate(1deg);
-                }
-            }
-        }
+  mat-card {
+    img {
+      transition: 0.3s all ease-in-out;
+    }
+    overflow: hidden;
+    &:hover {
+      & img {
+        transform: rotate(1deg);
+      }
+    }
+  }
 }

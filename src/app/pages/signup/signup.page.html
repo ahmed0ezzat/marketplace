@@ -2,13 +2,13 @@
   <div class="bg">
     <div class="bg-overlay"></div>
   </div>
-    <div *ngIf="isLoading" class="overlay">
-        <mat-spinner class="spinner" color="primary"></mat-spinner>
-    </div>
+  <div *ngIf="isLoading" class="overlay">
+    <mat-spinner class="spinner" color="primary"></mat-spinner>
+  </div>
 
   <mat-card>
     <mat-card-header class="head">
-      <mat-card-title >Signup</mat-card-title>
+      <mat-card-title>Signup</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <form [formGroup]="form">
@@ -20,7 +20,7 @@
             formControlName="firstname"
           />
         </mat-form-field>
-      
+
         <mat-form-field class="filed">
           <input
             type="text"
@@ -64,16 +64,26 @@
             formControlName="confirmPassword"
           />
         </mat-form-field>
-        <mat-error *ngIf="isSubmit  && form.get('confirmPassword')?.getError('passwordNotMatching') ">
+        <mat-error
+          *ngIf="isSubmit  && form.get('confirmPassword')?.getError('passwordNotMatching') "
+        >
           Passwords do not match, please try again!
         </mat-error>
 
         <mat-error *ngIf="isSubmit && form.invalid">
-            Please fill all required fields in the right formate.
-          </mat-error>
+          Please fill all required fields in the right formate.
+        </mat-error>
 
         <div class="button">
-          <button (click)="submit()" mat-raised-button color="primary" type="submit" mat-button>Submit</button>
+          <button
+            (click)="submit()"
+            mat-raised-button
+            color="primary"
+            type="submit"
+            mat-button
+          >
+            Submit
+          </button>
           <!-- <button (click)="navigateToSignup()" style="float:right" type="" mat-button> Signup</button> -->
         </div>
       </form>

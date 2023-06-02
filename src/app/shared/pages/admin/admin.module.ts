@@ -3,18 +3,19 @@ import { CommonModule } from "@angular/common";
 import { LzRoutingModule } from "./admin-routing.module";
 import { AdminPage } from "./admin.page";
 import { MaterialModule } from "../../../material/material.module";
-import { SharedModule } from '../../../shared'
+import { SharedModule } from "../../../shared";
 import {
-  CategoriesComponent, 
-  ProductsComponent, 
-  DeleteProductConfirmationDialogComponent, 
-  AddNewProductDialogComponent } from "./components";
+  CategoriesComponent,
+  ProductsComponent,
+  DeleteProductConfirmationDialogComponent,
+  AddNewProductDialogComponent,
+  UpdateProductDialogComponent
+} from "./components";
 import {
   CUSTOM_ELEMENTS_SCHEMA,
   NgModule,
   NO_ERRORS_SCHEMA,
 } from "@angular/core";
-import { UpdateProductDialogComponent } from './components/products/dialog/update-product-dialog/update-product-dialog.component';
 
 @NgModule({
   declarations: [

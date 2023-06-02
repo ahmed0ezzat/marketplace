@@ -10,7 +10,7 @@ async canActivate(
   route: ActivatedRouteSnapshot,
   state: RouterStateSnapshot
 ): Promise<boolean | UrlTree> {
-  /** Authentication and authorization */
+  /** Check User Authentication and authorization */
   const isAuthenticated = await this.authService.isAuthenticated()
   const isAuthorized = await this.authService.isAuthorized(state.url)
   if (!isAuthenticated) {
