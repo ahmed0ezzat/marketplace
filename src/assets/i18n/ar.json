@@ -1,6 +1,11 @@
 {
     "header" : {
         "Title": "المتجر",
-        "Products":"المنتجات"
+        "Products":"المنتجات",
+        "Admin": "المدير",
+        "Manage Products": "ادارة المنتجات"
+    },
+    "products": {
+        "Admin Area":"المدير"
     }
 }

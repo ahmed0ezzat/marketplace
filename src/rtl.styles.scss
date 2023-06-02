@@ -1,0 +1,19 @@
+// Ar version styles goes here
+body.rtl {
+    direction: rtl;
+    .header {
+        .logout {
+            left: 20px;
+            right: unset !important;
+        }
+    }
+
+    .products {
+
+        .admin-area {
+            left: 20px;
+            right: unset !important;
+        }
+    }
+    
+}

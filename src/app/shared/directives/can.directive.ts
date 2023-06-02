@@ -13,10 +13,8 @@ export class CanDirective {
     private appServie: AppService
   ) {
     this.elementRef.nativeElement.style.display = 'none';
-    // if (!this.allPermissions.length) {
       this.appServie.permissions$.subscribe((permissions: string []) => {
         if (permissions && permissions.length) {
-          console.log('p p p p p ', permissions.length)
           this.allPermissions = permissions
           if (this.allPermissions.length) {
             this.updateView();
@@ -29,15 +27,10 @@ export class CanDirective {
     if (!this.allPermissions) {
       this.allPermissions = this.authService.getUserRoles()
     }
-   
-    console.log('this.allPermissions ----- --- >', this.allPermissions)
     this.updateView();
   }
   updateView() {
-    console.log('p,', this.permission)
-    console.log('this.allPermissions', this.allPermissions)
     if (this.allPermissions && this.allPermissions.includes(this.permission)) {
-      console.log('founded')
       this.elementRef.nativeElement.style.display = 'initial';
     } else {
       this.elementRef.nativeElement.style.display = 'none';

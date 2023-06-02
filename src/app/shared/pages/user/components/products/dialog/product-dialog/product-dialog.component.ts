@@ -13,8 +13,5 @@ export class ProductDialogComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any
  ) { }
-ngOnInit() {
-  // will log the entire data object
-  console.log(this.data)
-}
+ngOnInit() {}
 }

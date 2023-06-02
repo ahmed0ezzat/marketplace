@@ -50,7 +50,6 @@ async getAllProducts() {
 async getAllCategories() {
   try {
     this.categories = await this.categoriesService.getCategories()
-    console.log(this.categories)
   } catch (error) {
     throw new Error('Error getting all categories')
   }

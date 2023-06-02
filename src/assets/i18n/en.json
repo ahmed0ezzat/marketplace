@@ -1,6 +1,11 @@
 {
     "header" : {
         "Title": "Marketplace",
-        "Products":"Products"
+        "Products":"Products",
+        "Admin": "Admin",
+        "Manage Products": "Manage Products"
+    },
+    "products": {
+        "Admin Area":"Admin Area"
     }
 }

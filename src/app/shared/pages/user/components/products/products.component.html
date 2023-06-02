@@ -57,7 +57,8 @@
                 arrow_forward_ios
               </mat-icon>
               <strong>
-                products
+                {{ "header.Products" | translate }}
+                
               </strong> 
             </p>
             <button
@@ -69,7 +70,8 @@
               [permission]="'edit'"
             >
               <mat-icon>admin_panel_settings</mat-icon>
-              Admin Area
+              {{ "products.Admin Area" | translate }}
+             
             </button>
           </mat-toolbar>
         </div>

@@ -26,7 +26,6 @@ export class LoginPage {
   async submit() {
     this.isSubmit = true
     this.isLoading = true
-    console.log('submitt')
     if (this.form.valid) {
       console.log('add new user ..');
       let userForm = this.form.value

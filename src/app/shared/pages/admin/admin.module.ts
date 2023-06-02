@@ -14,6 +14,7 @@ import {
   NgModule,
   NO_ERRORS_SCHEMA,
 } from "@angular/core";
+import { UpdateProductDialogComponent } from './components/products/dialog/update-product-dialog/update-product-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {
     ProductsComponent,
     DeleteProductConfirmationDialogComponent,
     AddNewProductDialogComponent,
+    UpdateProductDialogComponent,
   ],
   imports: [
     CommonModule,

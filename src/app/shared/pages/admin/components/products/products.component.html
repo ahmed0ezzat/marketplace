@@ -14,14 +14,15 @@
               </mat-icon>
               <strong>
                <a mat-button [routerLink]="'/admin'">
-                Admin
+                {{ "header.Admin" | translate }}
                </a>
               </strong>
               <mat-icon class="arrow">
                 arrow_forward_ios
               </mat-icon>
               <strong>
-                Manage Products
+                {{ "header.Manage Products" | translate }}
+                
                 </strong>
             </p>
             <!-- <button
@@ -76,7 +77,7 @@
                 <mat-icon>more_vert</mat-icon>
               </button>
               <mat-menu #menu="matMenu">
-                <button mat-menu-item >
+                <button mat-menu-item (click)="openUpdateProductDialog(element)">
                   Update
                 </button>
                 <button mat-menu-item (click)="openDeleteProductConfirmationDialog(element)">

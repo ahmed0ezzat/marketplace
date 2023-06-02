@@ -1,14 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate,ActivatedRouteSnapshot,RouterStateSnapshot, Router , UrlTree} from '@angular/router';
 import { AuthService } from '../services';
-
-// export const guardsGuard = async () => {
-//   const router = inject(Router);
-//   const authService = inject(AuthService);
-//   const isAuthenticated = await authService.isAuthenticated();
-//   console.log('isAuthenticated', isAuthenticated);
-//   return isAuthenticated ? true : router.navigate(['/login']);
-// };
 @Injectable({
   providedIn: 'root'
 })

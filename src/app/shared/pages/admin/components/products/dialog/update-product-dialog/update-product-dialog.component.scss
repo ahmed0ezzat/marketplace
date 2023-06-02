@@ -1,0 +1,13 @@
+.updateProduct {
+    padding:30px;
+
+    .field {
+        display: block;
+        width: 100%;
+        margin:5px;
+        mat-form-field {
+            width:inherit;
+        }
+    }
+
+}

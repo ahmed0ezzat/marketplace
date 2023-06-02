@@ -27,11 +27,7 @@ export class AuthService {
   }
 
   isAuthorized(url: any) {
-    console.log(url.indexOf('admin'))
     const roles = this.getUserRoles()
-    // const roles = this.getUserRoles()[0]?.split(',')
-    console.log(roles.indexOf('edit'))
-    console.log(this.getUserRoles().indexOf('edit'))
     if ( url.indexOf('admin')  > -1 && roles && roles.indexOf('edit') === -1)  {
         return false
     }

@@ -34,6 +34,19 @@ export class ProductsService {
   })
   }
 
+  async updateProducts(data: any) {
+    return new Promise((resolve, reject) => {
+      this.http.put(`https://fakestoreapi.com/products/${data.id}`, data).pipe().subscribe({
+        next: (data => {
+          resolve(data)
+        }),
+        error: (err => {
+          reject(false)
+        })
+      })
+  })
+  }
+
   async deleteProduct(id: string) {
     return new Promise((resolve, reject) => {
       this.http.delete(`https://fakestoreapi.com/products/${id}`).pipe().subscribe({

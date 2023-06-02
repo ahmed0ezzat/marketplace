@@ -18,6 +18,7 @@ export class AppComponent {
     this.sub1 = this.appServices.lang$.subscribe(val => {
       if (val) {
         this.switchLang(val)
+        this.switchDocDirection(val)
       }
     })
     
@@ -25,6 +26,11 @@ export class AppComponent {
 
   switchLang(lang: string) {
     this.translate.use(lang);
+  }
+
+  switchDocDirection(direction: string){
+    direction === 'ar' ? document.body.classList.add('rtl') : document.body.classList.remove('rtl')
+   
   }
   ngOnDestroy() {
     this.sub1.unsubscribe()
